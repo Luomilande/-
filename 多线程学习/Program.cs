@@ -17,7 +17,7 @@ namespace 多线程学习
         static void Main(string[] args)
         {
             TestDemo td = new TestDemo();
-           // td.TestDemoAsync();
+            td.TestDemoAsync();
 
             TypeThread typeThread = new TypeThread();
             //typeThread.TheardEstablish();
@@ -25,7 +25,7 @@ namespace 多线程学习
             TypeAction typeAction = new TypeAction();
             //typeAction.TheardEstablish();
             TypeThreadPool typeThreadPool = new TypeThreadPool();
-            typeThreadPool.TheardEstablish();
+           // typeThreadPool.TheardEstablish();
             TypeParallel typeParallel = new TypeParallel();
             //typeParallel.TheardEstablish();
             Console.ReadKey();
@@ -38,7 +38,7 @@ namespace 多线程学习
             Console.WriteLine($"当前主线程start.....,线程ID：{Thread.CurrentThread.ManagedThreadId}");
             await Task.Run(() =>
             {
-                AwaitDemo();
+                ThreadDemo();
                 Console.WriteLine("等我跑完才轮到你!");
             });
             Console.WriteLine("终于到我了，谢谢大哥！");

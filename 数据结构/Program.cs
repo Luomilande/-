@@ -52,24 +52,31 @@ namespace 数据结构
         public int [] data;//数组存储数据元素
 
         public int top;//栈顶
-        public void SeqStack(int max)//初始化栈
+        /// <summary>
+        /// /初始化栈
+        /// </summary>
+        /// <param name="max">栈长度</param>
+        public void SeqStack(int max)
         {
             data = new int[max];
             maxSize = max;
             top = -1;
         }
-        public int this[int index]
-        {
-            get {return data[index]; }
-            set { data[index] = value; }
-        }
-        public void Println() //栈顶打印
+        /// <summary>
+        /// 栈顶打印
+        /// </summary>
+        public void Println() 
         {
            int value = data[top];
             Console.WriteLine($"当前栈顶元素为：{ value}，栈顶所在位：{top}，栈长度：{MaxSize}");
             Console.WriteLine();
         }
-        public bool  Push(int value)//入栈
+        /// <summary>
+        /// 入栈
+        /// </summary>
+        /// <param name="value">入栈元素</param>
+        /// <returns></returns>
+        public bool  Push(int value)
         {
             
             if(maxSize> data.Length)
@@ -81,6 +88,10 @@ namespace 数据结构
             top++;
             return true;
         }
+        /// <summary>
+        /// 出栈
+        /// </summary>
+        /// <returns></returns>
         public bool Pop()//出栈
         {
             if(data.Length<0)
